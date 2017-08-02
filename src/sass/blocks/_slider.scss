@@ -1,0 +1,84 @@
+.slider {
+  @include border-box();
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  padding: 20px 0;
+
+  input {
+    display: none;
+  }
+
+  &__slides {
+    @include clearfix;
+    width: 300%;
+  }
+
+  &__item {
+    float: left;
+    width: 300px;
+  }
+
+  &__toggle-list {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 20px;
+
+    label {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 1px solid $white;
+      transform: rotate(45deg);
+      cursor: pointer;
+
+      &:not(:first-of-type) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  #feature-1:checked ~ .slider__slides {
+    transform: translateX(0);
+  }
+
+  #feature-2:checked ~ .slider__slides {
+    transform: translateX(-300px);
+  }
+
+  #feature-3:checked ~ .slider__slides {
+    transform: translateX(-600px);
+  }
+
+  #feature-1:checked ~ .slider__toggle-list label[for="feature-1"] {
+    background-color: $purple;
+  }
+
+  #feature-2:checked ~ .slider__toggle-list label[for="feature-2"] {
+    background-color: $purple;
+  }
+
+  #feature-3:checked ~ .slider__toggle-list label[for="feature-3"] {
+    background-color: $purple;
+  }
+}
+@media #{$tablet-width} {
+  .slider {
+    width: auto;
+    overflow: auto;
+
+    &__slides {
+      width: auto;
+    }
+
+    &__item {
+      width: auto;
+      float: none;
+    }
+
+    &__toggle-list {
+      display: none;
+    }
+  }
+}
