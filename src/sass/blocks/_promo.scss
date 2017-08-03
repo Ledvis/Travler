@@ -1,0 +1,52 @@
+.promo {
+  background-color: rgb(34, 34, 34);
+
+  &__wrapper {
+    @include container();
+    color: $white;
+    text-align: center;
+  }
+
+  &__caption {
+    text-shadow: 0 1px 1px rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  &__legend {
+    text-shadow: 0 1px 1px rgb(0, 0, 0);
+    color: rgb(161, 97, 219);
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+@media #{$tablet-width} {
+  .promo {
+    &__caption {
+      font-size: 32px;
+    }
+
+    &__legend {
+      font-size: 20px;
+    }
+  }
+}
+@media #{$desktop-width} {
+  .promo {
+    max-width: 1550px;
+    margin: 0 auto;
+    background: url("../img/promo.png") no-repeat center top;
+
+    &__wrapper {
+      padding: 300px 60px 20px;
+    }
+
+    &__caption {
+      font-size: 36px;
+    }
+
+    &__legend {
+      font-size: 24px;
+    }
+  }
+}

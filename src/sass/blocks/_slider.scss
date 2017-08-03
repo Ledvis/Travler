@@ -62,6 +62,82 @@
   #feature-3:checked ~ .slider__toggle-list label[for="feature-3"] {
     background-color: $purple;
   }
+
+  &--intro {
+    @include border-box();
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+
+    input {
+      display: none;
+    }
+
+    .slider__slides--intro {
+      @include clearfix;
+      width: 400%;
+      padding: 40px 0;
+    }
+
+    .slider__item--intro {
+      float: left;
+      width: 300px;
+    }
+
+    .slider__toggle-list--intro {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+
+      label {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border: 1px solid $white;
+        transform: rotate(45deg);
+        cursor: pointer;
+
+        &:not(:first-of-type) {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    #intro-1:checked ~ .slider__slides--intro {
+      transform: translateX(0);
+    }
+
+    #intro-2:checked ~ .slider__slides--intro {
+      transform: translateX(-300px);
+    }
+
+    #intro-3:checked ~ .slider__slides--intro {
+      transform: translateX(-600px);
+    }
+
+    #intro-4:checked ~ .slider__slides--intro {
+      transform: translateX(-900px);
+    }
+
+    #intro-1:checked ~ .slider__toggle-list--intro label[for="intro-1"] {
+      background-color: $purple;
+    }
+
+    #intro-2:checked ~ .slider__toggle-list--intro label[for="intro-2"] {
+      background-color: $purple;
+    }
+
+    #intro-3:checked ~ .slider__toggle-list--intro label[for="intro-3"] {
+      background-color: $purple;
+    }
+
+    #intro-4:checked ~ .slider__toggle-list--intro label[for="intro-4"] {
+      background-color: $purple;
+    }
+  }
 }
 @media #{$tablet-width} {
   .slider {
@@ -79,6 +155,24 @@
 
     &__toggle-list {
       display: none;
+    }
+
+    &--intro {
+      width: auto;
+      overflow: auto;
+
+      .slider__slides--intro {
+        width: auto;
+      }
+
+      .slider__item--intro {
+        width: auto;
+        float: none;
+      }
+
+      .slider__toggle-list--intro {
+        display: none;
+      }
     }
   }
 }
