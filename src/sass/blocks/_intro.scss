@@ -1,0 +1,136 @@
+.intro {
+  background-color: rgb(235, 235, 235);
+
+  &__wrapper {
+    @include container();
+    text-shadow: 0 1px 0 rgb(255, 255, 255);
+    color: rgb(113, 113, 113);
+    text-align: center;
+  }
+
+  &__caption {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: rgb(222, 222, 222);
+      transform: translateY(-1px);
+    }
+
+    p {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      padding: 0 20px;
+      font-size: 24px;
+      background-color: rgb(235, 235, 235);
+    }
+  }
+
+  &__legend {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  &__container {
+    &--big {
+      position: relative;
+      padding: 20px 0;
+    }
+  }
+
+  &__position {
+    margin: 0;
+    font-weight: 300;
+  }
+
+  &__item {
+    padding: 10px;
+    background-color: $white;
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    color: $black;
+  }
+}
+@media #{$tablet-width} {
+  .intro {
+    &__caption {
+      p {
+        font-size: 32px;
+      }
+    }
+
+    &__legend {
+      font-size: 20px;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+
+      &--big {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__employee {
+      flex-grow: 1;
+    }
+
+    &__item {
+      @include border-box();
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 40%;
+
+      &:last-of-type {
+        width: 100%;
+      }
+
+      &:first-of-type {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+@media #{$desktop-width} {
+  .intro {
+    max-width: 1550px;
+    margin: 0 auto;
+
+    &__caption {
+      font-size: 36px;
+    }
+
+    &__legend {
+      font-size: 24px;
+    }
+
+    &__container {
+      flex-wrap: nowrap;
+    }
+
+    &__employee {
+      flex-grow: 0;
+      width: 25%;
+    }
+
+    &__name {}
+
+    &__position {}
+  }
+}

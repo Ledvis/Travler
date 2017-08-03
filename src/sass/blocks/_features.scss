@@ -84,6 +84,9 @@
 }
 @media #{$desktop-width} {
   .features {
+    max-width: 1550px;
+    margin: 0 auto;
+
     &__wrapper {
       padding: 40px 0 !important;
     }

@@ -1,0 +1,328 @@
+.page-footer {
+  background-color: rgb(55, 55, 55);
+
+  &__wrapper {
+    @include container();
+    color: $white;
+  }
+
+  &__container {
+    &--left {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &--last {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo-img {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  &__logo-block {
+    padding-top: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  &__slogan {
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  &__descr {
+    font-size: 14px;
+  }
+
+  &__nav {
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__nav-item {
+    a {
+      border-bottom: 1px solid $white;
+
+      &:hover {
+        border-bottom: 1px solid $purple;
+      }
+    }
+
+    &--active {
+      a {
+        border-bottom: 1px solid $purple !important;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 10px 20px;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__social-item {
+    display: flex;
+    align-items: center;
+
+    &:hover a,
+    &:hover svg {
+      color: $purple;
+      fill: $purple;
+    }
+
+    &--tw {
+      svg {
+        width: 13px;
+        height: 9px;
+      }
+    }
+
+    &--fb {
+      svg {
+        width: 6px;
+        height: 12px;
+      }
+    }
+
+    &--rs {
+      svg {
+        width: 9px;
+        height: 9px;
+      }
+    }
+
+    &--ml {
+      svg {
+        width: 13px;
+        height: 9px;
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+
+    svg {
+      margin-right: 10px;
+      fill: $white;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  &__about {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__copyright {
+    margin: 0;
+  }
+}
+@media #{$tablet-width} {
+  .page-footer {
+    &__logo-img {
+      width: 50px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__slogan {
+      font-size: 20px;
+    }
+
+    &__descr {
+      font-size: 20px;
+    }
+
+    &__nav {
+      display: flex;
+    }
+
+    &__nav-item {
+      flex-grow: 1;
+      text-align: center;
+
+      a {
+        font-size: 20px;
+      }
+    }
+
+    &__social-item {
+      a {
+        font-size: 20px;
+      }
+    }
+
+    &__social-item--tw {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__social-item--fb {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__social-item--rs {
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &__social-item--ml {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__about {
+      font-size: 20px;
+    }
+
+    &__copyright {
+      font-size: 20px;
+    }
+  }
+}
+@media #{$desktop-width} {
+  .page-footer {
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 60px 0;
+    }
+
+    &__container {
+      &--left {
+        width: 50%;
+      }
+
+      &--right {
+        width: 50%;
+      }
+
+      &--last {
+        width: 100%;
+      }
+    }
+
+    &__logo-img {
+      width: 60px;
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__slogan {
+      font-size: 12px;
+    }
+
+    &__descr {
+      font-size: 12px;
+    }
+
+    &__nav {
+      margin-bottom: 30px;
+    }
+
+    &__nav-item {
+      &:not(:first-of-type) {
+        a {
+          border-left: 1px solid $white;
+        }
+      }
+
+      a {
+        position: relative;
+        font-size: 12px;
+        border-bottom: none;
+
+        &:hover {
+          border-bottom: none;
+        }
+
+        &:hover::before {
+          content: "";
+          position: absolute;
+          right: 20px;
+          bottom: -10px;
+          left: 20px;
+          height: 4px;
+          background-color: $purple;
+        }
+      }
+
+      &--active {
+        a {
+          border-bottom: none !important;
+
+          &::before {
+            content: "";
+            position: absolute;
+            right: 20px;
+            bottom: -10px;
+            left: 20px;
+            height: 4px;
+            background-color: $purple;
+          }
+        }
+      }
+    }
+
+    &__nav-item--active {}
+
+    &__social {}
+
+    &__social-item {
+      a {
+        font-size: 12px;
+      }
+    }
+
+    &__social-item--tw {}
+
+    &__social-item--fb {}
+
+    &__social-item--rs {}
+
+    &__social-item--ml {}
+
+    &__container--last {}
+
+    &__about {}
+
+    &__copyright {}
+  }
+}
