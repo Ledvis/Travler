@@ -541,13 +541,15 @@ img {
         -ms-flex-align: center;
             align-items: center;
     padding: 10px 0;
-    color: #6017a3;
+    color: black;
     font-size: 20px;
     font-weight: 700;
     text-align: center;
     text-decoration: none; }
-    .main-nav__item a:hover svg {
-      fill: #6017a3; }
+    .main-nav__item a:hover {
+      color: #6017a3; }
+      .main-nav__item a:hover svg {
+        fill: #6017a3; }
   .main-nav__item svg {
     width: 26px;
     height: 26px;
@@ -1318,6 +1320,8 @@ img {
       display: block; }
       .main-nav--closed .main-nav__item--active svg {
         fill: #6017a3; }
+      .main-nav--closed .main-nav__item--active a {
+        color: #6017a3; }
   .main-nav--opened .main-nav__toggler {
     right: 20px;
     width: 40px;
