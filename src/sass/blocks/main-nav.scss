@@ -22,13 +22,15 @@
       justify-content: center;
       align-items: center;
       padding: 10px 0;
-      color: $purple;
+      color: $black;
       font-size: 20px;
       font-weight: 700;
       text-align: center;
       text-decoration: none;
 
       &:hover {
+        color: $purple;
+
         svg {
           fill: $purple;
         }
@@ -82,6 +84,10 @@
 
           svg {
             fill: $purple;
+          }
+
+          a {
+            color: $purple;
           }
         }
       }
